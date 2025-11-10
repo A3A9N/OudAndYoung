@@ -7,5 +7,5 @@
 - Meerdere maps met unieke uitdagingen
 - Beweging van de personages
 - Interactieve knoppen
-- 
+  
   
