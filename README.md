@@ -1,4 +1,4 @@
-##Features:
+## Features:
 
 - Obstakels voor specifieke personages 
   - Trappen voor het verouderde character. Het jonge jongetje kan op de trappen lopen, maar het oudere character kan dat niet.
@@ -7,5 +7,5 @@
 - Meerdere maps met unieke uitdagingen
 - Beweging van de personages
 - Interactieve knoppen
-- 
+  
   
