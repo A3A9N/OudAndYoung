@@ -8,6 +8,7 @@ TagManager:
   - OldMan
   - OldWeakness
   - ChildWeakness
+  - Floor
   layers:
   - Default
   - TransparentFX

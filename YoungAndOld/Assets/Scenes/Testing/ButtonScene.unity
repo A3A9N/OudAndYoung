@@ -849,8 +849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   riseHeight: 3.56
-  riseSpeed: 0.64
-  ElevatorGoesUp: 1
+  riseSpeed: 0.83
+  ElevatorGoesUp: 0
   riseDelay: 1
   debugHeight: 1
 --- !u!212 &1235226447
