@@ -6,15 +6,17 @@ using UnityEngine.Events;
 
 public class ElevatorRise : MonoBehaviour
 {
+    [Header("Elevator Settings")]
     [SerializeField] float riseHeight;
     [SerializeField] float riseSpeed;
     [SerializeField] bool ElevatorGoesUp;
+    [SerializeField] float riseDelay = 1f;
+    [Header("Debug Settings")]
     [SerializeField] bool debugHeight;
     private bool elevatorIsRising;
     private bool buttonPressed;
     private float startY;
-    private float targetY;
-    [SerializeField] float riseDelay = 1f;
+    private float targetY;   
     private ElevatorButton elevatorButton;
     private int numberOfSwitches = 1;
     private int numberOfLoops = 0;
