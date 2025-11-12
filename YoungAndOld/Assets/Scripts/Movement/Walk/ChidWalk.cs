@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ChidWalk : MonoBehaviour
 {
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpForce = 300f;
     [SerializeField] private float moveSpeed;
     private Rigidbody2D rb;
     private float horizontalInput;
