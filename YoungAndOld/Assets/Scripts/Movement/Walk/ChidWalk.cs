@@ -7,7 +7,7 @@ public class ChidWalk : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private Rigidbody2D rb;
     private float horizontalInput;
-    private bool onGround;
+    [SerializeField]private bool onGround;
 
     private void Start()
     {
