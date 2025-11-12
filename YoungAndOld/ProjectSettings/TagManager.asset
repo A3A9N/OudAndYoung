@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Child
+  - OldMan
+  - OldWeakness
+  - ChildWeakness
   layers:
   - Default
   - TransparentFX
