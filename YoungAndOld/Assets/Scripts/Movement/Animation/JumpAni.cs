@@ -27,35 +27,21 @@ public class JumpAni : MonoBehaviour
         {
             animator.SetBool("LeftJump", true);
             NoIdle();
-            SetJumpLayerActive(true);
-
         }
         else if (RightJump)
         {
             animator.SetBool("RightJump", true);
             NoIdle();
-            SetJumpLayerActive(true);
         }
         else if(FrontJump)
         {
             animator.SetBool("FrontJump", true);
             NoIdle();
-            SetJumpLayerActive(true);
         }
-        else if (!FrontJump && !RightJump && !LeftJump)
-        {
-            SetJumpLayerActive(false);
-        }
-
-
         void NoIdle()
         {
             animator.SetBool("Idle", false);
         }
-        void SetJumpLayerActive(bool active)
-        {
-            int jumpLayerIndex = animator.GetLayerIndex("Jump Layer");
-            animator.SetLayerWeight(jumpLayerIndex, active ? 1f : 0f);
-        }
+
     }
 }

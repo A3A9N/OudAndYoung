@@ -4,8 +4,7 @@ public class MovementAni : MonoBehaviour
 {
     private Animator animator;
 
-    [SerializeField]
-    private bool isChild = true; 
+    [SerializeField] private bool isChild = true;
 
     private void Start()
     {
@@ -14,35 +13,50 @@ public class MovementAni : MonoBehaviour
 
     private void Update()
     {
-        bool movingRight = false;
-        bool movingLeft = false;
+        HandleMovement();
+        HandleJump();
+    }
 
-        if (isChild)
-        { 
-            movingRight = Input.GetKey(KeyCode.D);
-            movingLeft = Input.GetKey(KeyCode.A);
-        }
-        else
-        {
-            movingRight = Input.GetKey(KeyCode.RightArrow);
-            movingLeft = Input.GetKey(KeyCode.LeftArrow);
-        }
+    private void HandleMovement()
+    {
+        bool movingRight = isChild ? Input.GetKey(KeyCode.D) : Input.GetKey(KeyCode.RightArrow);
+        bool movingLeft = isChild ? Input.GetKey(KeyCode.A) : Input.GetKey(KeyCode.LeftArrow);
 
-        animator.SetBool("WalkLeft", false);
-        animator.SetBool("WalkRight", false);
-        animator.SetBool("Idle", false);
+        ResetAnimStates("WalkLeft", "WalkRight", "Idle");
 
         if (movingRight)
-        {
             animator.SetBool("WalkRight", true);
-        }
         else if (movingLeft)
-        {
             animator.SetBool("WalkLeft", true);
-        }
         else
-        {
             animator.SetBool("Idle", true);
-        }
+    }
+
+    private void HandleJump()
+    {
+        bool frontJump = Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D);
+        bool leftJump = Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W);
+        bool rightJump = Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W);
+
+        ResetAnimStates("FrontJump", "LeftJump", "RightJump");
+
+        if (leftJump)
+            SetJump("LeftJump");
+        else if (rightJump)
+            SetJump("RightJump");
+        else if (frontJump)
+            SetJump("FrontJump");
+    }
+
+    private void SetJump(string anim)
+    {
+        animator.SetBool(anim, true);
+        animator.SetBool("Idle", false);
+    }
+
+    private void ResetAnimStates(params string[] states)
+    {
+        foreach (string state in states)
+            animator.SetBool(state, false);
     }
 }
