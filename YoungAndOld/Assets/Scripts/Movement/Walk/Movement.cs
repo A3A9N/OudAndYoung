@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
     }
     private void Jump()
     {
-        transform.Translate(Vector3.up * 5f * Time.deltaTime);
+        transform.Translate(Vector3.up * 10f * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

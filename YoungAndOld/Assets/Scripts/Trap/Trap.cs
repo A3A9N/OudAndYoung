@@ -16,7 +16,7 @@ public class Trap : MonoBehaviour
         if (CompareTag("Child") && isInLadderZone)
         {
 
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.W))
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, climbForce);
             }
