@@ -18,7 +18,7 @@ public class Death : MonoBehaviour
         if (collision.tag == PlayerWeaknessTag)
         {
             deathEffect.SetActive(true);
-            Destroy(collision.gameObject);
+        
             Invoke("RestartLevel", restartDelay);
         }
     }
